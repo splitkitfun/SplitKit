@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/config/site";
 
 export default function Header() {
@@ -8,7 +9,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg border border-white/15 bg-white/5" />
+          <Image
+            src="/favicon.png"
+            alt={site.name}
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-lg object-contain"
+            priority
+          />
           <div className="text-sm font-semibold tracking-wide">{site.name}</div>
         </Link>
 
