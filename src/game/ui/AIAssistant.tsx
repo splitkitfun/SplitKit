@@ -221,3 +221,4 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ state, onClose }) => {
   );
 };
 
+

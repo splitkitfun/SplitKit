@@ -94,3 +94,4 @@ export const AREA_WIDTH = 640;
 export const AREA_HEIGHT = 480;
 export const TILE_SIZE = 32;
 
+

@@ -51,3 +51,4 @@ export const HOLDER_COSMETICS = {
   nameplateStyles: ['gold_outline', 'diamond', 'flame'],
 };
 
+

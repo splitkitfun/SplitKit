@@ -79,3 +79,4 @@ export const QuestPanel: React.FC<QuestPanelProps> = ({ quests, onClose }) => {
   );
 };
 
+

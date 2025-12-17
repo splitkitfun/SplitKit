@@ -142,3 +142,4 @@ export const getTotalItemCount = (inventory: InventorySlot[], itemIds: string[])
     .reduce((sum, slot) => sum + slot.quantity, 0);
 };
 
+

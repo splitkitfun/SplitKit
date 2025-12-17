@@ -61,3 +61,4 @@ export default function GameModal({ open, title, onClose, children }: Props) {
   );
 }
 
+

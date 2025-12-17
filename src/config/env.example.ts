@@ -27,3 +27,4 @@ export const ENV_VARS = {
   NEXT_PUBLIC_HOLDER_MIN_BALANCE: 'Minimum balance (number)',
 };
 
+
