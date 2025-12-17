@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/site/Header";
-import Footer from "@/components/site/Footer";
 import { site } from "@/config/site";
+import ConditionalLayout from "@/components/site/ConditionalLayout";
 
 export const metadata: Metadata = {
   title: {
@@ -59,9 +58,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-black text-white antialiased">
-        <Header />
-        <div className="min-h-[70vh]">{children}</div>
-        <Footer />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );

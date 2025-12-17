@@ -672,18 +672,18 @@ export default function PlayPage() {
 
       {/* Bottom hint bar */}
       {!showEscMenu && (
-        <div className="absolute bottom-0 left-0 right-0 bg-[#0a0a0f]/80 border-t border-[#2a2a20] px-4 py-2">
-          <div className="flex items-center justify-between max-w-4xl mx-auto">
-            <div className="text-[#6a6a5a] text-xs" style={{ fontFamily: 'monospace' }}>
+        <div className="absolute bottom-0 left-0 right-0 bg-[#0a0a0f]/90 border-t border-[#2a2a20] px-4 py-2 z-40">
+          <div className="flex items-center justify-between gap-4 max-w-6xl mx-auto">
+            <div className="text-[#6a6a5a] text-xs flex-shrink-0" style={{ fontFamily: 'monospace' }}>
               WASD move • SHIFT sprint • Click to interact • ESC menu • F1 assistant
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 flex-shrink-0">
               {holderModeEnabled && isHolder && (
-                <span className="text-[#c9aa71] text-xs" style={{ fontFamily: 'monospace' }}>
+                <span className="text-[#c9aa71] text-xs whitespace-nowrap" style={{ fontFamily: 'monospace' }}>
                   👑 Holder
                 </span>
               )}
-              <span className="text-[#4a4a3a] text-xs" style={{ fontFamily: 'monospace' }}>
+              <span className="text-[#4a4a3a] text-xs whitespace-nowrap" style={{ fontFamily: 'monospace' }}>
                 {username ? `Playing as ${username}` : 'Guest Mode'}
               </span>
             </div>

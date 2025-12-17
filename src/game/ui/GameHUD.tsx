@@ -52,7 +52,7 @@ export const GameHUD: React.FC<GameHUDProps> = ({
   return (
     <>
       {/* Left Panel - Skills/Stats */}
-      <div className="absolute left-0 top-0 bottom-12 w-48 bg-[#0a0a0f]/90 border-r border-[#2a2a20] flex flex-col">
+      <div className="absolute left-0 top-0 bottom-14 w-48 bg-[#0a0a0f]/90 border-r border-[#2a2a20] flex flex-col z-20">
         {/* Profile section */}
         <div 
           className="p-3 border-b border-[#2a2a20] cursor-pointer hover:bg-[#1a1a15]"
@@ -181,7 +181,7 @@ export const GameHUD: React.FC<GameHUDProps> = ({
       </div>
 
       {/* Right Panel - Inventory/Bank/Quests tabs */}
-      <div className="absolute right-0 top-0 bottom-12 w-56 bg-[#0a0a0f]/90 border-l border-[#2a2a20] flex flex-col">
+      <div className="absolute right-0 top-0 bottom-14 w-56 bg-[#0a0a0f]/90 border-l border-[#2a2a20] flex flex-col z-20">
         {/* Tab buttons */}
         <div className="flex border-b border-[#2a2a20]">
           <button
