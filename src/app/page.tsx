@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import { site } from "@/config/site";
 
 export default function Home() {
   return (
@@ -67,9 +68,20 @@ export default function Home() {
           </div>
 
           {/* Tagline */}
-          <p className="text-[#9a9a8a] text-lg md:text-xl mb-8 max-w-xl mx-auto" style={{ fontFamily: 'monospace' }}>
+          <p className="text-[#9a9a8a] text-lg md:text-xl mb-4 max-w-xl mx-auto" style={{ fontFamily: 'monospace' }}>
             An Old School RuneScape-inspired browser RPG. Train skills, explore the world, complete quests.
           </p>
+
+          {/* Status Badge */}
+          <div className="mb-8">
+            <span className={`inline-block px-4 py-2 rounded-lg text-sm border ${
+              site.tokenLive 
+                ? 'bg-[#1a3a1a] border-[#4a8a4a] text-[#6a9a6a]' 
+                : 'bg-[#3a2a1a] border-[#6a5a4a] text-[#9a8a7a]'
+            }`} style={{ fontFamily: 'monospace' }}>
+              {site.tokenLive ? '🟢 Token Live' : '🔒 Pre-Launch'}
+            </span>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -263,6 +275,112 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Hold Section */}
+      <section className="py-24 px-4 bg-[#0a0a08]">
+        <div className="max-w-5xl mx-auto">
+          <h2 
+            className="text-2xl md:text-3xl text-[#c9aa71] text-center mb-4"
+            style={{ fontFamily: '"Press Start 2P", monospace' }}
+          >
+            WHY HOLD?
+          </h2>
+          <p className="text-[#8a8a7a] text-center mb-12 max-w-2xl mx-auto" style={{ fontFamily: 'monospace' }}>
+            The game is completely free to play. Holder Mode is optional and unlocks exclusive in-game utility and rewards.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {/* Holder Mode Perks */}
+            <div className="bg-[#151510] border border-[#3a3020] rounded-lg p-6">
+              <h3 className="text-[#c9aa71] text-lg mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '12px' }}>
+                🎮 HOLDER MODE
+              </h3>
+              <ul className="space-y-3 text-[#8a8a7a] text-sm" style={{ fontFamily: 'monospace' }}>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9aa71]">•</span>
+                  <span><strong className="text-[#b9a971]">Founder&apos;s Grove:</strong> Exclusive zone with Ancient Trees and Golden Fish</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9aa71]">•</span>
+                  <span><strong className="text-[#b9a971]">Cosmetics:</strong> Holder titles, cape colors, gold nameplate styles</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9aa71]">•</span>
+                  <span><strong className="text-[#b9a971]">Daily Claim:</strong> Essence and Rations (non-tradeable) every 24 hours</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9aa71]">•</span>
+                  <span><strong className="text-[#b9a971]">Extra Save Slots:</strong> 3 slots instead of 1 for multiple characters</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Epoch Rewards */}
+            <div className="bg-[#151510] border border-[#3a3020] rounded-lg p-6">
+              <h3 className="text-[#c9aa71] text-lg mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '12px' }}>
+                ⏰ EPOCH REWARDS (Coming Soon)
+              </h3>
+              <p className="text-[#8a8a7a] text-sm mb-4" style={{ fontFamily: 'monospace' }}>
+                Rewards per epoch are proportional to:
+              </p>
+              <div className="bg-[#1a1a15] border border-[#2a2a20] rounded p-4 mb-4">
+                <div className="text-[#c9aa71] text-sm font-bold mb-2" style={{ fontFamily: 'monospace' }}>
+                  Holding Weight × In-game Renown
+                </div>
+                <p className="text-[#6a6a5a] text-xs" style={{ fontFamily: 'monospace' }}>
+                  Epochs are discrete time windows. Claims happen after each epoch ends. Early holders get better positioning.
+                </p>
+              </div>
+              <p className="text-[#6a6a5a] text-xs" style={{ fontFamily: 'monospace' }}>
+                * Epoch system activates after token launch
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-[#1a2a1a] border border-[#2a4a2a] rounded-lg p-6 text-center">
+            <p className="text-[#6a8a6a] text-sm mb-2" style={{ fontFamily: 'monospace' }}>
+              <strong>Wallet connection is optional.</strong> Connect only if you want to enable Holder Mode perks.
+            </p>
+            <p className="text-[#5a7a5a] text-xs" style={{ fontFamily: 'monospace' }}>
+              No purchase required to preview Holder Mode features. All gameplay remains free.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 px-4 bg-[#0d0d0a]">
+        <div className="max-w-5xl mx-auto">
+          <h2 
+            className="text-2xl md:text-3xl text-[#c9aa71] text-center mb-12"
+            style={{ fontFamily: '"Press Start 2P", monospace' }}
+          >
+            HOW IT WORKS
+          </h2>
+          
+          <div className="grid md:grid-cols-5 gap-4">
+            {[
+              { step: '1', title: 'Play', desc: 'Start playing immediately. No wallet needed.' },
+              { step: '2', title: 'Earn Renown', desc: 'Complete quests, level skills, explore the world.' },
+              { step: '3', title: 'Optional Wallet', desc: 'Connect Solana wallet to enable Holder Mode.' },
+              { step: '4', title: 'Holder Perks', desc: 'Unlock zones, cosmetics, daily claims, extra slots.' },
+              { step: '5', title: 'Epoch Rewards', desc: 'Claim rewards based on Holding Weight × Renown (post-launch).' },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-[#2a2a20] border border-[#3a3a2a] flex items-center justify-center mx-auto mb-3 text-[#c9aa71] font-bold" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
+                  {item.step}
+                </div>
+                <h3 className="text-[#c9aa71] text-sm mb-2" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '10px' }}>
+                  {item.title}
+                </h3>
+                <p className="text-[#7a7a6a] text-xs" style={{ fontFamily: 'monospace' }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 px-4 bg-gradient-to-b from-[#0a0a08] to-[#0d1a0d]">
         <div className="max-w-2xl mx-auto text-center">
@@ -275,32 +393,24 @@ export default function Home() {
           <p className="text-[#8a8a7a] mb-8" style={{ fontFamily: 'monospace' }}>
             Your adventure awaits. No account required to start playing.
           </p>
-          <Link
-            href="/play"
-            className="inline-block px-12 py-5 bg-[#c9aa71] text-[#1a1a0f] font-bold text-lg hover:bg-[#d9ba81] transition-all duration-200 border-b-4 border-[#8b7355] hover:border-[#9b8365]"
-            style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}
-          >
-            ENTER THE ARENA
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/play"
+              className="inline-block px-12 py-5 bg-[#c9aa71] text-[#1a1a0f] font-bold text-lg hover:bg-[#d9ba81] transition-all duration-200 border-b-4 border-[#8b7355] hover:border-[#9b8365]"
+              style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}
+            >
+              ENTER THE ARENA
+            </Link>
+            <Link
+              href="/docs"
+              className="inline-block px-12 py-5 bg-transparent text-[#8b8b7b] border-2 border-[#3a3a2a] hover:border-[#5a5a4a] hover:text-[#aaaa9a] transition-all duration-200"
+              style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '12px' }}
+            >
+              READ DOCS
+            </Link>
+          </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-4 bg-[#0a0a08] border-t border-[#1a1a15]">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-[#4a4a3a] text-sm" style={{ fontFamily: 'monospace' }}>
-            SplitKit Arena © 2024
-          </div>
-          <div className="flex gap-6">
-            <Link href="/docs" className="text-[#6a6a5a] hover:text-[#9a9a8a] text-sm" style={{ fontFamily: 'monospace' }}>
-              Documentation
-            </Link>
-            <Link href="/play" className="text-[#6a6a5a] hover:text-[#9a9a8a] text-sm" style={{ fontFamily: 'monospace' }}>
-              Play Game
-            </Link>
-          </div>
-        </div>
-      </footer>
 
       {/* Global styles for animations */}
       <style jsx global>{`

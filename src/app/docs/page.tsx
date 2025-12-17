@@ -1,39 +1,19 @@
 import Link from "next/link";
+import { site } from "@/config/site";
 
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
-      {/* Header */}
-      <header className="border-b border-[#1a1a15] bg-[#0d0d0a]">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link 
-            href="/"
-            className="text-[#c9aa71] hover:text-[#d9ba81] transition-colors"
-            style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '12px' }}
-          >
-            SPLITKIT
-          </Link>
-          <nav className="flex gap-6">
-            <Link href="/" className="text-[#6a6a5a] hover:text-[#9a9a8a] text-sm" style={{ fontFamily: 'monospace' }}>
-              Home
-            </Link>
-            <Link href="/play" className="text-[#6a6a5a] hover:text-[#9a9a8a] text-sm" style={{ fontFamily: 'monospace' }}>
-              Play
-            </Link>
-            <span className="text-[#c9aa71] text-sm" style={{ fontFamily: 'monospace' }}>
-              Docs
-            </span>
-          </nav>
-        </div>
-      </header>
-
       <main className="max-w-3xl mx-auto px-4 py-12">
         <h1
-          className="text-3xl text-[#c9aa71] mb-8"
+          className="text-3xl text-[#c9aa71] mb-4"
           style={{ fontFamily: '"Press Start 2P", monospace' }}
         >
           Documentation
         </h1>
+        <p className="text-[#6a6a5a] text-sm mb-8" style={{ fontFamily: 'monospace' }}>
+          Last updated: {new Date().toLocaleDateString()}
+        </p>
 
         <section className="mb-12">
           <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
@@ -219,9 +199,55 @@ export default function DocsPage() {
           </div>
         </section>
 
-        <section className="mb-12">
+        <section id="overview" className="mb-12">
           <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
-            👑 Holder Benefits
+            Overview
+          </h2>
+          <div className="bg-[#151510] border border-[#2a2a20] rounded-lg p-6 text-[#9a9a8a]" style={{ fontFamily: 'monospace' }}>
+            <p className="mb-4">
+              SplitKit is an Old School RuneScape-inspired browser RPG built with Next.js and Phaser 3. 
+              The game is <strong className="text-[#6a8a6a]">completely free to play</strong> without any wallet connection required.
+            </p>
+            <p className="mb-4">
+              <strong className="text-[#c9aa71]">Holder Mode</strong> is an optional feature that unlocks exclusive in-game perks 
+              for token holders. Wallet connection is only required if you want to enable Holder Mode.
+            </p>
+            <p>
+              The game features skills (Woodcutting, Fishing, Cooking), quests, multiple explorable areas, 
+              an inventory system, banking, and an AI assistant to help guide your journey.
+            </p>
+          </div>
+        </section>
+
+        <section id="wallet-optional" className="mb-12">
+          <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
+            Wallet Optional
+          </h2>
+          <div className="bg-[#151510] border border-[#2a2a20] rounded-lg p-6 text-[#9a9a8a]" style={{ fontFamily: 'monospace' }}>
+            <p className="mb-4">
+              <strong className="text-[#6a8a6a]">You can play the entire game without connecting a wallet.</strong> 
+              All core gameplay features are available to everyone:
+            </p>
+            <ul className="space-y-2 text-sm mb-4">
+              <li>• All skills and leveling systems</li>
+              <li>• All quests and world exploration</li>
+              <li>• Inventory, banking, and save system</li>
+              <li>• AI Assistant and all game mechanics</li>
+            </ul>
+            <p className="text-sm">
+              Wallet connection is <strong className="text-[#c9aa71]">only required</strong> if you want to:
+            </p>
+            <ul className="space-y-2 text-sm mt-2">
+              <li>• Enable Holder Mode perks</li>
+              <li>• Buy tokens (when token is live)</li>
+              <li>• Claim epoch rewards (post-launch)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="holder-mode" className="mb-12">
+          <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
+            👑 Holder Mode
           </h2>
           <div className="bg-gradient-to-r from-[#1a1510] to-[#151510] border border-[#3a3020] rounded-lg p-6" style={{ fontFamily: 'monospace' }}>
             <p className="text-[#9a9a8a] mb-4">
@@ -280,7 +306,98 @@ export default function DocsPage() {
           </div>
         </section>
 
-        <section className="mb-12">
+        <section id="rewards-option-c" className="mb-12">
+          <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
+            ⏰ Rewards Option C (Epoch-Based)
+          </h2>
+          <div className="bg-[#151510] border border-[#2a2a20] rounded-lg p-6" style={{ fontFamily: 'monospace' }}>
+            <p className="text-[#9a9a8a] mb-4">
+              Rewards per epoch are calculated using a formula that rewards both token holding and in-game activity:
+            </p>
+            
+            <div className="bg-[#1a1a15] border border-[#2a2a20] rounded p-4 mb-4">
+              <div className="text-[#c9aa71] text-lg font-bold mb-2" style={{ fontFamily: 'monospace' }}>
+                Holding Weight × In-game Renown
+              </div>
+              <p className="text-[#8a8a7a] text-sm">
+                Your reward share is proportional to both how many tokens you hold (Holding Weight) 
+                and how much you&apos;ve played and progressed in-game (Renown).
+              </p>
+            </div>
+
+            <div className="space-y-3 text-sm text-[#8a8a7a]">
+              <div>
+                <strong className="text-[#c9aa71]">Holding Weight:</strong> Based on your token balance at epoch snapshot.
+              </div>
+              <div>
+                <strong className="text-[#c9aa71]">In-game Renown:</strong> Earned through quests, skill levels, achievements, and exploration.
+              </div>
+              <div>
+                <strong className="text-[#c9aa71">Epochs:</strong> Discrete time windows (e.g., weekly or monthly). 
+                Claims become available after each epoch ends.
+              </div>
+            </div>
+
+            <div className="mt-6 p-4 bg-[#2a2a1a]/50 border border-[#4a4a2a] rounded">
+              <p className="text-[#aa9a6a] text-xs">
+                ⚠️ <strong>Pre-launch:</strong> Epoch rewards system will activate after token launch. 
+                Until then, you can still earn Renown in-game, but claims will show &quot;Coming soon&quot;.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="bags-integration" className="mb-12">
+          <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
+            🛒 Bags Integration
+          </h2>
+          <div className="bg-[#151510] border border-[#2a2a20] rounded-lg p-6" style={{ fontFamily: 'monospace' }}>
+            <p className="text-[#9a9a8a] mb-4">
+              SplitKit uses <strong className="text-[#6a9aca]">Bags</strong> for token swapping functionality. 
+              The integration is designed with pre-launch safety in mind.
+            </p>
+
+            <div className="space-y-4">
+              <div className="bg-[#1a1a15] border border-[#2a2a20] rounded p-4">
+                <h3 className="text-[#c9aa71] text-sm mb-2" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '10px' }}>
+                  Pre-Launch Mode
+                </h3>
+                <p className="text-[#8a8a7a] text-sm">
+                  When <code className="text-[#6a9aca]">NEXT_PUBLIC_TOKEN_LIVE !== "true"</code>, 
+                  the &quot;Buy Token&quot; button is <strong className="text-[#aa6a4a]">disabled</strong> and shows &quot;Coming Soon&quot;. 
+                  All Bags API routes return 403 to prevent accidental transactions.
+                </p>
+              </div>
+
+              <div className="bg-[#1a1a15] border border-[#2a2a20] rounded p-4">
+                <h3 className="text-[#c9aa71] text-sm mb-2" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '10px' }}>
+                  Post-Launch Flow
+                </h3>
+                <p className="text-[#8a8a7a] text-sm mb-2">
+                  Once token is live:
+                </p>
+                <ol className="list-decimal list-inside space-y-1 text-sm text-[#7a7a6a]">
+                  <li>User clicks &quot;Buy Token&quot; in Market Stall</li>
+                  <li>Phantom wallet prompts for connection (if not connected)</li>
+                  <li>User selects SOL amount to swap</li>
+                  <li>System gets quote from Bags API</li>
+                  <li>System builds swap transaction</li>
+                  <li>Phantom signs and sends transaction</li>
+                  <li>User receives tokens in wallet</li>
+                </ol>
+              </div>
+
+              <div className="bg-[#1a2a1a]/50 border border-[#2a4a2a] rounded p-4">
+                <p className="text-[#6a8a6a] text-xs">
+                  <strong>Security:</strong> Bags API key is stored server-side only. 
+                  Client never sees the API key. All sensitive operations happen via proxy routes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="launch-checklist" className="mb-12">
           <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
             🚀 Launch Checklist
           </h2>
@@ -340,6 +457,49 @@ export default function DocsPage() {
           </div>
         </section>
 
+        <section id="faq" className="mb-12">
+          <h2 className="text-xl text-[#c9aa71] mb-4" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '14px' }}>
+            FAQ
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: "Is my wallet safe?",
+                a: "Yes. We never request private keys. We only use Phantom's standard connect and sign methods. Your wallet remains in your control. We only read your public address to check token balance for Holder Mode verification."
+              },
+              {
+                q: "Do I need to buy tokens to play?",
+                a: "No. The game is completely free to play. Wallet connection and token purchase are optional. You can enjoy all core gameplay features without any crypto interaction."
+              },
+              {
+                q: "When can I claim epoch rewards?",
+                a: "Epoch rewards will activate after token launch. Until then, you can still play and earn Renown in-game. Once epochs begin, you'll be able to claim rewards proportional to your Holding Weight × Renown at the end of each epoch."
+              },
+              {
+                q: "What happens if I disconnect my wallet?",
+                a: "Your game progress is saved separately from wallet connection. Disconnecting your wallet will disable Holder Mode perks (zones, cosmetics, daily claims, extra slots), but all your gameplay progress remains intact."
+              },
+              {
+                q: "Can I transfer my save between devices?",
+                a: "Currently, saves are stored in your browser's localStorage. To transfer saves, you would need to export/import the save data manually. Future updates may add cloud save functionality."
+              },
+              {
+                q: "What is Renown and how do I earn it?",
+                a: "Renown is an in-game metric that tracks your overall progress and achievements. You earn Renown by completing quests, leveling skills, exploring areas, and achieving milestones. Higher Renown increases your epoch reward share."
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-[#151510] border border-[#2a2a20] rounded-lg p-4">
+                <h3 className="text-[#c9aa71] text-sm mb-2" style={{ fontFamily: '"Press Start 2P", monospace', fontSize: '10px' }}>
+                  {item.q}
+                </h3>
+                <p className="text-[#8a8a7a] text-sm" style={{ fontFamily: 'monospace' }}>
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <div className="text-center pt-8 border-t border-[#1a1a15]">
           <Link
             href="/play"
@@ -350,13 +510,6 @@ export default function DocsPage() {
           </Link>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="py-8 px-4 bg-[#0a0a08] border-t border-[#1a1a15] mt-12">
-        <div className="max-w-4xl mx-auto text-center text-[#4a4a3a] text-sm" style={{ fontFamily: 'monospace' }}>
-          SplitKit Arena © 2024
-        </div>
-      </footer>
     </div>
   );
 }
